@@ -10,7 +10,7 @@
 	<url>http://maven.apache.org</url>
 
 	<properties>
-		<cxf.version>3.0.0</cxf.version>
+		<cxf.version>2.6.10</cxf.version>
 		<jackson.version>1.9.13</jackson.version>
 		<spring.version>4.0.0.RELEASE</spring.version>
 		<log4j.version>1.2.17</log4j.version>
@@ -27,27 +27,30 @@
 		<!-- Apache CXF -->
 		<dependency>
 			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-frontend-jaxws</artifactId>
+			<version>${cxf.version}</version>
+
+		</dependency>
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
 			<artifactId>cxf-rt-frontend-jaxrs</artifactId>
 			<version>${cxf.version}</version>
-		</dependency>
 
-		<dependency>
-			<groupId>org.apache.cxf</groupId>
-			<artifactId>cxf-rt-rs-extension-providers</artifactId>
-			<version>${cxf.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.cxf</groupId>
-			<artifactId>cxf-rt-rs-service-description</artifactId>
+			<artifactId>cxf-rt-transports-http</artifactId>
 			<version>${cxf.version}</version>
-		</dependency>
 
+		</dependency>
 
 		<dependency>
 			<groupId>org.codehaus.jackson</groupId>
 			<artifactId>jackson-jaxrs</artifactId>
 			<version>${jackson.version}</version>
 		</dependency>
+		
+				
 
 		<!-- Spring framework -->
 		<dependency>
@@ -61,13 +64,29 @@
 			<version>${spring.version}</version>
 		</dependency>
 
-	
+
 		<!-- Log4j -->
+		<!-- <dependency> -->
+		<!-- <groupId>log4j</groupId> -->
+		<!-- <artifactId>log4j</artifactId> -->
+		<!-- <version>${log4j.version}</version> -->
+		<!-- </dependency> -->
+
+		<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
 		<dependency>
-			<groupId>log4j</groupId>
-			<artifactId>log4j</artifactId>
-			<version>${log4j.version}</version>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>1.7.25</version>
 		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/javax.servlet/servlet-api -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>2.5</version>
+			<scope>provided</scope>
+		</dependency>
+
 
 		<dependency>
 			<groupId>junit</groupId>

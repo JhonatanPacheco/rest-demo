@@ -1,18 +1,21 @@
 package com.spring.cxf.rest.user.impl;
 
-import org.apache.log4j.Logger;
 import org.springframework.stereotype.Service;
 
+import com.spring.cxf.exception.BiosnettcsException;
 import com.spring.cxf.rest.user.UserManagerService;
 import com.spring.cxf.rest.user.dto.UserRequest;
 import com.spring.cxf.rest.user.dto.UserResponse;
 
 @Service("userManagerService")
 public class UserManagerServiceImp implements UserManagerService {
-	Logger log = Logger.getLogger(UserManagerServiceImp.class);
+	
+	
 	@Override
-	public Object fetchUserById(UserRequest request) {
-		log.info("Inicio fetchUserById() ");
+	public Object fetchUserById(UserRequest request) throws BiosnettcsException {
+		if(request.getUser()== null) {
+			throw new BiosnettcsException("n-222", "User es requerido", 403);
+		}
 		return new UserResponse();
 	}
 

@@ -5,6 +5,7 @@ import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 
+import com.spring.cxf.exception.BiosnettcsException;
 import com.spring.cxf.rest.user.dto.UserRequest;
 import com.spring.cxf.rest.user.dto.UserResponse;
 
@@ -15,7 +16,7 @@ public interface UserManagerService {
 	
 	@POST
 	@Path("/fetchUserById/")
-	public Object fetchUserById(UserRequest request);
+	public Object fetchUserById(UserRequest request) throws BiosnettcsException;
 
 	@POST
 	@Path("/fetchAllUsers/")
